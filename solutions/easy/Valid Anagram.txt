@@ -1,0 +1,18 @@
+// Title: Valid Anagram
+            // Difficulty: Easy
+            // Language: Python3
+            // Link: https://leetcode.com/problems/valid-anagram/
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        sCount, tCount = {}, {}
+        for ch in s:
+            sCount[ch] = 1 + sCount.get(ch, 0)
+        for ch in t:
+            tCount[ch] = 1 + tCount.get(ch, 0)
+        for key in sCount:
+            if key not in tCount or sCount[key] != tCount[key]:
+                return False
+        if len(sCount.keys()) != len(tCount.keys()):
+            return False
+        return True
