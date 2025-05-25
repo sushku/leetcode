@@ -7,7 +7,7 @@ class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         d = {}
         for num in nums:
-            if d.get(num):
+            if num in d:
                 return True
             else:
                 d[num] = 1
