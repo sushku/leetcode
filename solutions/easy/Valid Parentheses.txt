@@ -1,0 +1,18 @@
+// Title: Valid Parentheses
+            // Difficulty: Easy
+            // Language: Python3
+            // Link: https://leetcode.com/problems/valid-parentheses/
+
+class Solution:
+    def isValid(self, s: str) -> bool:
+        pMap = {")": "(", "]": "[", "}": "{"}
+        stk = []
+        for ch in s:
+            if ch in ["(", "[", "{"]:
+                stk.append(ch)
+            else:
+                if stk and stk[-1] == pMap[ch]:
+                    stk.pop()
+                else:
+                    return False
+        return stk == []
