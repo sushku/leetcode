@@ -1,0 +1,14 @@
+// Title: Contains Duplicate
+            // Difficulty: Easy
+            // Language: Python3
+            // Link: https://leetcode.com/problems/contains-duplicate/
+
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        d = {}
+        for num in nums:
+            if d.get(num):
+                return True
+            else:
+                d[num] = 1
+        return False
