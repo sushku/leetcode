@@ -1,0 +1,25 @@
+// Title: Balanced Binary Tree
+            // Difficulty: Easy
+            // Language: Python3
+            // Link: https://leetcode.com/problems/balanced-binary-tree/
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        def maxDepth(node):
+            if not node:
+                return -1
+            leftDepth = 1 + maxDepth(node.left)
+            rightDepth = 1 + maxDepth(node.right)
+            if balanced and abs(leftDepth - rightDepth) > 1:
+                balanced = False
+            return max(leftDepth, rightDepth)
+        maxDepth(root)
+        balanced = True
+            nonlocal balanced
+        return balanced
