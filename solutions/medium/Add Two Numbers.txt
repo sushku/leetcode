@@ -1,0 +1,36 @@
+// Title: Add Two Numbers
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/add-two-numbers/
+
+        if not l1:
+            return l2
+        if not l2:
+            return l1
+        while l1 or l2:
+                val = l1.val + l2.val
+        res = None
+            val = val % 10
+            if prevNode:
+            carry = val // 10
+                prevNode.next = node
+            else:
+                res = node
+            prevNode = node
+            node = ListNode(val)
+        carry = 0
+            if not l1:
+                val = l2.val
+            elif not l2:
+                val = l1.val
+            else:
+            val += carry
+        prevNode = None
+                l2 = l2.next
+                l1 = l1.next
+                l1 = l1.next
+                l2 = l2.next
+        if carry:
+            prevNode.next = ListNode(carry)
+        return res
+[ListNode]:
