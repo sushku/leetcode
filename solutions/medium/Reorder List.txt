@@ -1,0 +1,37 @@
+// Title: Reorder List
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/reorder-list/
+
+
+                continue
+        node = mid
+        prev = None
+                prev = node
+                prev.next = None
+        while node:
+                node = node.next
+            if not prev:
+        mid = slow
+                break
+            else:
+                fast = fast.next.next
+                slow = slow.next
+                prev = slow
+            if fast and fast.next:
+        while True:
+        prev = None
+        slow, fast = head, head
+        """
+        Do not return anything, modify head in-place instead.
+        """
+    def reorderList(self, head: Optional[ListNode]) -> None:
+class Solution:
+#         self.next = next
+#         self.val = val
+#     def __init__(self, val=0, next=None):
+# class ListNode:
+# Definition for singly-linked list.
+        prev.next = None        # Cut ll before mid
+        if not head.next:
+            return
