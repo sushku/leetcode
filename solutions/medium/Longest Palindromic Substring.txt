@@ -1,0 +1,35 @@
+// Title: Longest Palindromic Substring
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/longest-palindromic-substring/
+
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        i = 0
+        pal = [0, 0]
+        while i < len(s):
+            # mid-point is at an index
+            d = 0
+            while True:
+                if i - d >= 0 and i + d < len(s) and s[i - d] == s[i + d]:
+            while True:
+                    palLen = 2 * d + 1
+            # mid-point is between indices
+                        maxPal = [i - d, i + d]
+                    if palLen > maxPalLen:
+                        maxPalLen = palLen
+                else:
+                    break
+                if i - d >= 0 and i + 1 + d < len(s) and s[i - d] == s[i + 1 + d]:
+            d = 0
+                d += 1
+                    palLen = 2 * d + 2
+        maxPalLen = 0
+                    if palLen > maxPalLen:
+                        maxPal = [i - d, i + 1 + d]
+                        maxPalLen = palLen
+                else:
+                    break
+                d += 1
+        return ''.join(s[maxPal[0]:maxPal[1] + 1])
+            i += 1
