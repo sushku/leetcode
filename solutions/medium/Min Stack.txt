@@ -9,7 +9,11 @@ class MinStack:
         self.stk = []
 
     def push(self, val: int) -> None:
+        if self.stk:
             minVal = min(val, self.stk[-1][1])
+            self.stk.append((val, minVal))
+        else:
+            self.stk.append((val, val))
 
     def pop(self) -> None:
         self.stk.pop()
@@ -26,8 +30,4 @@ class MinStack:
 # obj.push(val)
 # obj.pop()
 # param_3 = obj.top()
-        if self.stk:
-            self.stk.append((val, minVal))
-        else:
-            self.stk.append((val, val))
 # param_4 = obj.getMin()
