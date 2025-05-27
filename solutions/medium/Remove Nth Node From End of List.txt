@@ -1,0 +1,29 @@
+// Title: Remove Nth Node From End of List
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        node = head
+        nPrev = None
+        while True:
+        count = 0
+            count += 1
+            if count == n + 1:
+                nPrev = head
+            node = node.next
+            if nPrev:
+                nPrev = nPrev.next
+        if not nPrev:
+            return head.next
+        else:
+            nPrev.next = nPrev.next.next
+            if not node:
+                break
+            return head
