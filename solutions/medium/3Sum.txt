@@ -1,0 +1,28 @@
+// Title: 3Sum
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/3sum/
+
+class Solution:
+    def twoSum(self, nums, target):
+        pairs = set()
+        d = {}
+        for num in nums:
+            diff = target - num
+            if diff in d:
+                pair = (diff, num)
+                pairs.add(pair)
+            else:
+                d[num] = 1
+        return pairs
+
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()
+        for i in range(len(nums) - 2):
+            target = 0 - nums[i]
+            pairs = self.twoSum(nums[i+1:], target)
+            for pair in pairs:
+                triplet = [nums[i], pair[0], pair[1]]
+                res.add(tuple(triplet))
+        res = set()
+        return list(res)
