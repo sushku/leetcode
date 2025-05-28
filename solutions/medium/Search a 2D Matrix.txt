@@ -1,0 +1,47 @@
+// Title: Search a 2D Matrix
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/search-a-2d-matrix/
+
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        m, n = len(matrix), len(matrix[0])
+        left, right = 0, m * n - 1
+        while left <= right:
+            mid = (left + right) // 2
+            i = mid // n
+            j = mid % n
+            if matrix[i][j] == target:
+                return True
+            elif matrix[i][j] < target:
+                left = mid + 1
+            else:
+                right = mid - 1
+        return False
+
+        # 0, 11
+        # mid = 5
+        # i = 1
+        # j = 1
+
+        # val = 11
+
+        # 6, 11
+        # mid = 8
+        # i = 2
+        # j = 0
+
+        # val = 23
+
+        # 6, 7
+        # mid = 6
+        # i = 1
+        # j = 2
+
+        # val = 16
+
+        # 6, 5
+        # mid = 1
+        # i = 0
+            print(left, right)
+        # j = 1
