@@ -1,0 +1,67 @@
+// Title: LRU Cache
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/lru-cache/
+
+class ListNode:
+
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+
+    def get(self, key: int) -> int:
+        if node := self.store.get(key):
+
+    def put(self, key: int, value: int) -> None:
+        if node := self.store.get(key):
+
+# Your LRUCache object will be instantiated and called as such:
+        self.store = {}
+        self.head = None
+        self.tail = None
+            node.val = value
+class LRUCache:
+        self.key = key
+    def __init__(self, key, val, next=None, prev=None):
+        self.val = val
+        self.next = next
+        self.prev = prev
+
+
+            # move to end. update head and tail
+        else:
+            node = ListNode(key, value)
+            self.store[key] = node
+            # move to end. update head and tail
+            # if capacity remove from ll and store
+            if len(self.store) > self.capacity:
+                del self.store[self.head.key]
+                self.head = self.head.next
+        else:
+            return -1
+            return node.val
+            # move to end. update head and tail
+    def _move(self, node, new=False):
+            if node == self.head:
+            self._move(node, new=False)
+            self._move(node, new=False)
+        if node == self.tail:
+            return
+        node.prev = self.tail
+        node.next = None
+        self.tail = node
+
+                self.head = self.head.next
+            else:
+            if not self.head:
+        self.tail.next = node
+                self.head = node
+                self.tail = node
+            else:
+# obj = LRUCache(capacity)
+# param_1 = obj.get(key)
+                self._move(node, new=True)
+
+        if not new:
+                node.prev.next = node.next
+                node.next.prev = node.prev
+# obj.put(key,value)
