@@ -1,0 +1,41 @@
+// Title: Design Twitter
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/design-twitter/
+
+        
+        h = []
+        for tweet in tweets:
+            heapq.heappush(h, tweet)
+            if len(h) > 10:
+                heapq.heappop(h)
+        h.sort(reverse=True)
+        return [t[1] for t in h]
+
+    def follow(self, followerId: int, followeeId: int) -> 
+None:
+        if self.followMap.get(followerId):
+                self.followMap[followerId].append
+        else:
+            self.followMap[followerId] = [followeeId]
+        tweets = []
+        tweets.extend(self.store.get(userId, []))
+        for uid in self.followMap.get(userId, []):
+            tweets.extend(self.store.get(uid, [])[-10:])
+    def getNewsFeed(self, userId: int) -> List[int]:
+
+        self.timestamp += 1
+
+    def unfollow(self, followerId: int, followeeId: int) -> 
+None:
+        if self.followMap.get(followerId):
+            self.followMap[followerId].remove(followeeId)
+        print(self.store)
+        print(self.followMap)
+
+
+# Your Twitter object will be instantiated and called as 
+such:
+            if followeeId not in self.followMap.get
+(followerId):
+(followeeId)
