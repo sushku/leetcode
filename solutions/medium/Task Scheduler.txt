@@ -1,0 +1,30 @@
+// Title: Task Scheduler
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/task-scheduler/
+
+class Solution:
+    def leastInterval(self, tasks: List[str], n: int) -> int:
+        taskCount = {}
+        for task in tasks:
+            taskCount[task] = 1 + taskCount.get(task, 0)
+
+        intervals = 0
+        while taskCount:
+            h = [[-1 * freq, task] for task, freq in taskCount.items()]
+            heapq.heapify(h)
+            while cycle > 0 and h:
+                count += 1
+                if -1 * t[0] > 1:
+                else:
+                    del taskCount[t[1]]
+
+            count = 0
+            if count < n + 1 and taskCount:
+                count = n + 1
+            intervals += count
+                    taskCount[t[1]] -= 1
+            cycle = n + 1
+                t = heapq.heappop(h)
+                cycle -= 1
+        return intervals
