@@ -1,0 +1,19 @@
+// Title: Encode and Decode Strings
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/encode-and-decode-strings/
+
+                    lenStr += s[i]
+            else:
+                else:
+                        strEnd = False
+                    else:
+                        strEnd = True
+                        stringList.append("")
+                    if intLen == 0:
+                    lenStr, newString = "", ""
+                    intLen = int(lenStr)
+                if s[i] == '#':
+            if strEnd:
+        while i < len(s):
+        stringList = []
