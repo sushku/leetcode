@@ -1,0 +1,31 @@
+// Title: Permutation in String
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/permutation-in-string/
+
+class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+        s1Map, s2Map = {}, {}
+        for ch in s1:
+            s1Map[ch] = 1 + s1Map.get(ch, 0)
+        left, right =  0, len(s1) - 1
+        while True:
+    def areStringsSame(self, d1, d2):
+        for key, val in d1.items():
+            if d2.get(key) != val:
+                return False
+
+        return True
+            if s2Map:
+                s2Map[s2[left-1]] -= 1
+                s2Map[s2[right]] = 1 + s2Map.get(s2[right], 0)
+            else:
+                for ch in s2[left:right + 1]:
+                    s2Map[ch] = 1 + s2Map.get(ch, 0)
+            if self.areStringsSame(s1Map, s2Map):
+                return True
+            left += 1
+            right += 1
+            if right >= len(s2):
+                break
+        return False
