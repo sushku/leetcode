@@ -1,0 +1,23 @@
+// Title: Longest Repeating Character Replacement
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/longest-repeating-character-replacement/
+
+class Solution:
+    def characterReplacement(self, s: str, k: int) -> int:
+        length, maxLength, maxCharCount = 0, 0, 0
+        counter = {}
+        left, right = 0, 0
+        while right < len(s):
+                length -= 1
+            maxLength = max(length, maxLength)
+            letter = s[right]
+            counter[letter] = 1 + counter.get(letter, 0)
+            length += 1
+                counter[s[left]] -= 1
+            right += 1
+            while length - maxCharCount > k:
+                maxCharCount = max(list(counter.values()))
+            maxCharCount = max(list(counter.values()))
+                left += 1
+        return maxLength
