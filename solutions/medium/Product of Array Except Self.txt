@@ -1,0 +1,19 @@
+// Title: Product of Array Except Self
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/product-of-array-except-self/
+
+        if len(zeroIndex) > 1:
+            res = [0] * len(nums)
+        elif len(zeroIndex) == 1:
+            for j in range(0, len(nums)):
+        res = []
+                product *= n
+                zeroIndex.append(i)
+            else:
+            if n == 0:
+        for i, n in enumerate(nums):
+        zeroIndex = []
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+class Solution:
+        product = 1
