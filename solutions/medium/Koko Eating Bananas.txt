@@ -1,0 +1,17 @@
+// Title: Koko Eating Bananas
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/koko-eating-bananas/
+
+class Solution:
+    def minEatingSpeed(self, piles: List[int], h: int) -> int:
+        maxSpeed = max(piles)
+        minSpeed = 1
+        while minSpeed < maxSpeed:
+            avg = (minSpeed + maxSpeed) // 2
+            hrs = sum([math.ceil(x / avg) for x in piles])
+            if hrs <= h:
+            else:
+                minSpeed = avg + 1
+                maxSpeed = avg
+        return maxSpeed
