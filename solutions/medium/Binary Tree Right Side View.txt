@@ -12,23 +12,23 @@
 class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
         q = deque()
+        vals, levelVals = [], []
         node = root
-        while node:
         level, prevLevel = 0, 0
+        while node:
             if level != prevLevel:
+                vals.append(levelVals[-1]) 
+                prevLevel = level
+                levelVals = []
+            levelVals.append(node.val)
             if node.left:
                 q.append((level + 1, node.left))
             if node.right:
                 q.append((level + 1, node.right))
-                level, node = q.popleft()
-                prevLevel = level
-                vals.append(levelVals[-1]) 
-        vals, levelVals = [], []
-            levelVals.append(node.val)
-                levelVals = []
             if q:
+                level, node = q.popleft()
             else:
                 break
-            vals.append(levelVals[-1])
         if levelVals:
+            vals.append(levelVals[-1])
         return vals
