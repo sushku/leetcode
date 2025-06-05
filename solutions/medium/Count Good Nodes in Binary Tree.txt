@@ -1,0 +1,26 @@
+// Title: Count Good Nodes in Binary Tree
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/count-good-nodes-in-binary-tree/
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def goodNodes(self, root: TreeNode) -> int:
+        def helper(root, maxVal):
+            if not root:
+                return
+            if root.val >= maxVal:
+                n += 1
+            helper(root.left, maxVal)
+                maxVal = root.val
+            helper(root.right, maxVal)
+        n = 0
+
+        helper(root, root.val)
+            nonlocal n
+        return n
