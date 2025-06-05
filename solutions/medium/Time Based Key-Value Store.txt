@@ -1,0 +1,37 @@
+// Title: Time Based Key-Value Store
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/time-based-key-value-store/
+
+class TimeMap:
+
+    def __init__(self):
+
+    def set(self, key: str, value: str, timestamp: int) -> None:
+            self.store[key] = [(timestamp, value)]
+
+    def get(self, key: str, timestamp: int) -> str:
+        left, right = 0, len(vals) - 1
+
+# Your TimeMap object will be instantiated and called as such:
+# obj = TimeMap()
+# obj.set(key,value,timestamp)
+        self.store = {}
+        if key in self.store:
+        else:
+            self.store[key].append((timestamp, value))
+        vals = self.store.get(key)
+        if not vals:
+            return ""
+        while left <= right:
+            mid = (left + right) // 2
+            if vals[mid][0] == timestamp:
+                return vals[mid][1]
+            elif vals[mid][0] > timestamp:
+                right = mid - 1
+            else:
+                left = mid + 1
+        if left <= 0:
+            return ""
+        return vals[left-1][1]
+# param_2 = obj.get(key,timestamp)
