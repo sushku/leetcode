@@ -1,0 +1,33 @@
+// Title: Search in Rotated Sorted Array
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/search-in-rotated-sorted-array/
+
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+            left, right = 0, len(nums) - 1
+            while left < right:
+                mid = (left + right) // 2
+                if nums[0] > nums[mid]:
+                    left = mid + 1
+            minIndex = right
+                    right = mid
+                else:
+        newNums = nums[minIndex:] + nums[:minIndex]
+        while left <= right:
+            mid = (left + right) // 2
+            if target == newNums[mid]:
+                return index
+            elif target < newNums[mid]:
+                right = mid - 1
+            else:
+                left = mid + 1
+        left, right = 0, n - 1
+        return -1
+                index = pos - n if pos >= n else pos
+                pos = mid + minIndex
+# 0 1 2 3 4 5 6
+        n = len(newNums)
+        if len(nums) == 1 or nums[0] < nums[-1]:
+            minIndex = 0
+        else:
