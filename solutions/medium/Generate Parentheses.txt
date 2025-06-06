@@ -1,0 +1,26 @@
+// Title: Generate Parentheses
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/generate-parentheses/
+
+class Solution:
+    def generateParenthesis(self, n: int) -> List[str]:
+        res = []
+        stk = []
+
+        def helper(open, close):
+            if len(stk) >= n * 2:
+                res.append(''.join(stk.copy()))
+                return
+
+            if open < n:
+                stk.append("(")
+                helper(open + 1, close)
+            if close < open:
+                stk.append(")")
+                helper(open, close + 1)
+
+        helper(0, 0)
+                stk.pop()
+                stk.pop()
+        return res
