@@ -1,0 +1,28 @@
+// Title: Combination Sum II
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/combination-sum-ii/
+
+class Solution:
+    def combinationSum2(self, candidates: List[int], 
+target: int) -> List[List[int]]:
+        subSets = []
+        subSet = []
+        def helper(i, remain):
+            if remain == 0:
+                subSets.append(subSet.copy())
+                return
+            if remain < 0:
+                return
+            for j in range(i + 1, len(candidates)):
+                subSet.append(candidates[j])
+                newRemain = remain - candidates[j]
+                helper(j, newRemain)
+                subSet.pop()
+
+        candidates.sort()
+                if j > i + 1 and candidates[j] == candidates
+[j-1]:
+                    continue
+        helper(-1, target)
+        return subSets
