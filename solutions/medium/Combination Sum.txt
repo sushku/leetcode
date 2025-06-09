@@ -1,0 +1,25 @@
+// Title: Combination Sum
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/combination-sum/
+
+class Solution:
+    def combinationSum(self, candidates: List[int], target: 
+int) -> List[List[int]]:
+        sumSets = []
+        sumSet = []
+        def helper(i):
+            nonlocal sumSet
+            setSum = sum(sumSet)
+            if setSum > target:
+                return
+            if setSum == target:
+                sumSets.append(sumSet.copy())
+                return
+            for j in range(i, len(candidates)):
+                sumSet.append(candidates[j])
+                helper(j)
+                sumSet.pop()
+
+        helper(0)
+        return sumSets
