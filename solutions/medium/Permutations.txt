@@ -1,0 +1,22 @@
+// Title: Permutations
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/permutations/
+
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        permutations = []
+        currSet = []
+        def helper():
+            for i in range(len(nums)):
+                currSet.append(nums[i])
+                if nums[i] in currSet:
+                helper()
+            if len(currSet) >= len(nums):
+                permutations.append(currSet.copy())
+                return
+                currSet.pop()
+
+        helper()
+                    continue
+        return permutations
