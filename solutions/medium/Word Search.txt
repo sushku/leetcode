@@ -1,0 +1,44 @@
+// Title: Word Search
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/word-search/
+
+class Solution:
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        m, n = len(board), len(board[0])
+
+        def backtrack(r, c, i):
+            if r+1 < m and board[r+1][c] == word[i] and (r+1, c) not in visited:
+                backtrack(r+1, c, i+1)
+            if i >= len(word):
+                return
+            if r > 0 and board[r-1][c] == word[i] and (r-1, c) not in visited:
+                backtrack(r-1, c, i+1)
+            if c+1 < n and board[r][c+1] == word[i] and (r, c+1) not in visited:
+                backtrack(r, c+1, i+1)
+            if c > 0 and board[r][c-1] == word[i] and (r, c-1) not in visited:
+        visited = []
+                visited.append((r+1, c))
+                visited.append((r-1, c))
+                visited.append((r, c+1))
+                visited.append((r, c-1))
+                backtrack(r, c-1, i+1)
+                found = True
+        found = False
+                visited.pop()
+                visited.pop()
+                visited.pop()
+                visited.pop()
+
+        for x in range(len(board)):
+            for y in range(len(board[0])):
+                if board[x][y] == word[0]:
+                    visited.append((x, y))
+                    backtrack(x, y, 1)
+                    visited.pop()
+                    if found:
+                        break
+            if found:
+                break
+            nonlocal found
+        return found
