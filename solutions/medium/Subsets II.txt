@@ -1,0 +1,39 @@
+// Title: Subsets II
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/subsets-ii/
+
+    def subsetsWithDup(self, nums: List[int]) -> List[List
+[int]]:
+        subSet = []
+        def helper(i):
+            if i >= len(nums):
+                subSets.append(subSet.copy())
+                return
+            subSet.append(nums[i])
+            helper(i + 1)
+            subSet.pop()
+            while i + 1 < len(nums) and (nums[i] == nums[i
++1]):
+        # subSets = []
+        # subSet = []
+        # def helper(i):
+        #     for j in range(i, len(nums)):
+        #         helper(j + 1)
+        #         subSet.pop()
+        #         if j > 1 and nums[j] == nums[j - 1]:
+        # helper(0)
+        # return subSets
+
+        subSets = []
+        #         subSet.append(nums[j])
+        #             continue
+        # nums.sort()
+
+        #     subSets.append(subSet.copy())
+                i += 1
+            helper(i + 1)
+
+        nums.sort()
+        helper(0)
+        return subSets
