@@ -1,0 +1,42 @@
+// Title: Design Add and Search Words Data Structure
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/design-add-and-search-words-data-structure/
+
+class TrieNode:
+
+    def __init__(self):
+        self.children = {}
+        self.end = False
+
+class WordDictionary:
+
+    def __init__(self):
+        self.root = TrieNode()        
+
+    def addWord(self, word: str) -> None:
+        curr = self.root
+        for c in word:
+            if c not in curr.children:
+                curr.children[c] = TrieNode()
+            curr = curr.children[c]
+        curr.end = True
+
+    def search(self, word: str) -> bool:
+        def searchInNode(subWord, node):
+            for i, c in enumerate(subWord):
+                    if c == ".":
+                            if searchInNode(subWord[i + 1:], node.children[n]):
+        return searchInNode(word, self.root)
+
+# Your WordDictionary object will be instantiated and called as such:
+# obj = WordDictionary()
+# obj.addWord(word)
+                if c not in node.children:
+                else:
+                    node = node.children[c]
+                        for n in node.children:
+                                return True
+                    return False
+            return node.end
+# param_2 = obj.search(word)
