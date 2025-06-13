@@ -1,0 +1,18 @@
+// Title: Daily Temperatures
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/daily-temperatures/
+
+class Solution:
+    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+        res = [0] * len(temperatures)
+        stk = []
+        for i, t in enumerate(temperatures):
+            if i == 0:
+                stk.append(i)
+                continue
+            while stk and t > temperatures[stk[-1]]:
+                j = stk.pop()
+                res[j] = i - j
+            stk.append(i)
+        return res
