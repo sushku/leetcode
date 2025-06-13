@@ -1,0 +1,30 @@
+// Title: Construct Binary Tree from Preorder and Inorder Traversal
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def buildTree(self, preorder: List[int], inorder: List
+[int]) -> Optional[TreeNode]:
+        rootVal = preorder[0]
+        rootIndex = inorder.index(rootVal)
+        leftInorder = inorder[:rootIndex]
+        rightInorder = inorder[rootIndex+1:]
+
+        root = TreeNode(rootVal)
+        root.left = self.buildTree(leftPreorder, 
+        root.right = self.buildTree(rightPreorder, 
+        leftPreorder = preorder[1:len(leftInorder)+1]
+        rightPreorder = preorder[len(leftInorder)+1:]
+        if not preorder:
+            return None
+
+rightInorder)
+leftInorder)
+        return root
