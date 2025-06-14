@@ -1,0 +1,33 @@
+// Title: Max Area of Island
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/max-area-of-island/
+
+class Solution:
+    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+        if not grid:
+            return 0
+        rows, cols = len(grid), len(grid[0])
+        area, maxArea = 0, 0
+        visited = set()
+        q = deque()
+        for r in range(rows):
+            for c in range(cols):
+                if (r, c) in visited:
+                    continue
+                if grid[r][c] == 1:
+                    q.append((r, c))
+                    visited.add((r, c))
+                    area = 1
+                while q:
+                    r1, c1 = q.popleft()
+                    for n in [(1, 0), (0, 1), (-1, 0), (0, 
+-1)]:
+                        r2, c2 = r1 + n[0], c1 + n[1]
+                            q.append((r2, c2))
+                            visited.add((r2, c2))
+                            area += 1
+                maxArea = max(area, maxArea)
+                        if 0 <= r2 < rows and 0 <= c2 < 
+cols and (r2, c2) not in visited and grid[r2][c2] == 1:
+        return maxArea
