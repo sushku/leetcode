@@ -1,0 +1,20 @@
+// Title: Car Fleet
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/car-fleet/
+
+class Solution:
+    def carFleet(self, target: int, position: List[int], 
+speed: List[int]) -> int:
+        pairs = list(zip(position, speed))
+        pairs.sort(reverse=True)
+        fleets = []
+        for i, pair in enumerate(pairs):
+            if i == 0:
+                fleets.append(pair)
+                continue
+            if s * d0 / s0 < d:
+                fleets.append(pair)
+            s, s0 = pair[1], fleets[-1][1]
+            d, d0 = target - pair[0], target - fleets[-1][0]
+        return len(fleets)
