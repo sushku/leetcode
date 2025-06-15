@@ -1,0 +1,16 @@
+// Title: Happy Number
+            // Difficulty: Easy
+            // Language: Python3
+            // Link: https://leetcode.com/problems/happy-number/
+
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        while True:
+            n = sum([int(i) ** 2 for i in str(n)])
+            if n == 1:
+                return True
+            else:
+                if n in seen:
+                    return False
+        seen = set()
+            seen.add(n)
