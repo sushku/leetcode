@@ -1,0 +1,33 @@
+// Title: Minimum Window Substring
+            // Difficulty: Hard
+            // Language: Python3
+            // Link: https://leetcode.com/problems/minimum-window-substring/
+
+class Solution:
+    def isDesirable(self, windowMap, targetMap):
+        for c in targetMap:
+            if c not in windowMap or windowMap[c] < targetMap[c]:
+                return False
+
+    def minWindow(self, s: str, t: str) -> str:
+        left, right = 0, 0
+        while right < len(s):
+                    minLen = right - left + 1
+            else:
+                right += 1
+                left += 1
+        windowMap = {s[left]: 1}
+                    minLeft = left
+                if right - left + 1 <= minLen:
+                    minRight = right
+        minLeft, minRight = -1, -1
+        return s[minLeft:minRight+1] if minLeft > -1 else ""
+        for c in t:
+            targetMap[c] = 1 + targetMap.get(c, 0)
+        minLen = len(s)
+            if self.isDesirable(windowMap, targetMap):
+        targetMap = {}
+                if right < len(s):
+        return True
+                windowMap[s[left]] -= 1
+                    windowMap[s[right]] = 1 + windowMap.get(s[right], 0)
