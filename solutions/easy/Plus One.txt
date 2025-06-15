@@ -1,0 +1,23 @@
+// Title: Plus One
+            // Difficulty: Easy
+            // Language: Python3
+            // Link: https://leetcode.com/problems/plus-one/
+
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        res = []
+        for i, digit in enumerate(digits[::-1]):
+            if i == 0:
+                digit += 1
+            if digit > 9:
+                res.append(digit % 10)
+                carry = 1
+            else:
+                res.append(digit)
+                carry = 0
+        carry = 0
+            else:
+                digit += carry
+        if carry:
+            res.append(carry)
+        return res[::-1]
