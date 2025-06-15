@@ -1,0 +1,33 @@
+// Title: Rotting Oranges
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/rotting-oranges/
+
+class Solution:
+    def orangesRotting(self, grid: List[List[int]]) -> int:
+        # Find all rotting oranges and put in a q
+        q = deque()
+        rows, cols = len(grid), len(grid[0])
+        seen = set()
+        # iterate through the q and add neighbors at every pop
+        # iterate through the matrix and check for fresh oranges.
+        for r in range(rows):
+            for c in range(cols):
+                if grid[r][c] == 2:
+                    q.append((r, c, 0))
+        while q:
+            r, c, minutes = q.popleft()
+            for n in neighbors:
+        neighbors = [(1,0), (0,1), (-1,0), (0,-1)]
+                r1, c1 = r + n[0], c + n[1]
+                    q.append((r1, c1, minutes + 1))
+                if 0 <= r1 < rows and 0 <= c1 < cols and (r1, c1) not in seen and grid[r1][c1] == 1:
+                    seen.add((r1, c1))
+                    seen.add((r, c))
+                    grid[r1][c1] = 2
+        for r in range(rows):
+            for c in range(cols):
+                if grid[r][c] == 1:
+                    return -1
+        minutes = 0
+        return minutes
