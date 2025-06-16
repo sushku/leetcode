@@ -1,0 +1,25 @@
+// Title: Largest Rectangle in Histogram
+            // Difficulty: Hard
+            // Language: Python3
+            // Link: https://leetcode.com/problems/largest-rectangle-in-histogram/
+
+class Solution:
+    def largestRectangleArea(self, heights: List[int]) -> 
+int:
+        if len(heights) == 1:
+            return heights[0]
+        stk = []
+        area, maxArea = 0, 0
+        for i in range(len(heights)):
+            while stk and heights[i] < stk[-1][1]:
+            stk.append((j, heights[i]))
+                area = (i - index) * h
+                index, h = stk.pop()
+                maxArea = max(area, maxArea)
+            j = index if index > -1 else i
+            index = -1
+        while stk:
+            index, h = stk.pop()
+            area = (len(heights) - index) * h
+            maxArea = max(area, maxArea)
+        return maxArea
