@@ -3,4 +3,17 @@
             // Language: Python3
             // Link: https://leetcode.com/problems/jump-game/
 
-c
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        for i, num in enumerate(nums):
+            if num == 0 and i < len(nums) - 1:
+                j = i - 1
+                can = False
+                while j >= 0:
+                    if nums[j] > i - j:
+                        can = True
+                        break
+                    j -= 1
+                if not can:
+                    return False
+        return True
