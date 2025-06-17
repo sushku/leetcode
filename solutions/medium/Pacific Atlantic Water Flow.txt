@@ -1,0 +1,39 @@
+// Title: Pacific Atlantic Water Flow
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/pacific-atlantic-water-flow/
+
+class Solution:
+    def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
+        res = []
+        rows, cols = len(heights), len(heights[0])
+        def helperPacific(r, c):
+            if r == 0 or c == 0:
+                return True
+            for n in [(1,0), (0,1), (-1,0), (0,-1)]:
+                r1, c1 = r + n[0], c + n[1]
+                if 0 <= r1 < rows and 0 <= c1 < cols and (r1, c1) not in visitedP and heights[r1][c1] <= heights[r][c]:
+                    visitedP.add((r1, c1))
+                    ret = ret or helperPacific(r1, c1)
+            return ret
+        def helperAtlantic(r, c):
+            if r == rows - 1 or c == cols - 1:
+                return True
+            for n in [(1,0), (0,1), (-1,0), (0,-1)]:
+                r1, c1 = r + n[0], c + n[1]
+                if 0 <= r1 < rows and 0 <= c1 < cols and (r1, c1) not in visitedA and heights[r1][c1] <= heights[r][c]:
+                    visitedA.add((r1, c1))
+                    ret = ret or helperAtlantic(r1, c1)
+        for r in range(rows):
+            for c in range(cols):
+
+                atlantic = helperAtlantic(r, c)
+                pacific = helperPacific(r, c)
+                    res.append([r, c])
+                if pacific and atlantic:
+
+            ret = False
+            ret = False
+            return ret
+                visitedA, visitedP = set(), set()
+        return res
