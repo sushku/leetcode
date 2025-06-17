@@ -1,0 +1,22 @@
+// Title: Trapping Rain Water
+            // Difficulty: Hard
+            // Language: Python3
+            // Link: https://leetcode.com/problems/trapping-rain-water/
+
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        maxL, maxR = 0, 0
+        left, right = [], []
+        for h in height:
+            left.append(maxL)
+            maxL = max(maxL, h)
+        for h in height[::-1]:
+            right.append(maxR)
+            maxR = max(maxR, h)
+        right = right[::-1]
+        sumVol = 0
+        for i, h in enumerate(height):
+            vol = min(left[i], right[i]) - h
+            if vol > 0:
+                sumVol += vol
+        return sumVol
