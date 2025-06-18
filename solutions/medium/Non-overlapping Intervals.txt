@@ -1,0 +1,17 @@
+// Title: Non-overlapping Intervals
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/non-overlapping-intervals/
+
+class Solution:
+    def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
+        intervals.sort(key = lambda x: x[1])
+        count = 0
+        k = intervals[0][1]
+        for i in intervals[1:]:
+            if i[0] < k:
+                continue
+            else:
+                count += 1
+                k = i[1]
+        return count
