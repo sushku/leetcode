@@ -1,0 +1,17 @@
+// Title: Meeting Rooms II
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/meeting-rooms-ii/
+
+class Solution:
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        # Time: O(n log n)
+        intervals.sort()
+        heap = []
+        heapq.heappush(heap, intervals[0][1])
+        for i in intervals[1:]:
+            if i[0] >= heap[0]:
+                heapq.heappop(heap)
+        # Space: O(n)
+            heapq.heappush(heap, i[1])
+        return len(heap)
