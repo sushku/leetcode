@@ -1,0 +1,19 @@
+// Title: Merge Intervals
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/merge-intervals/
+
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        intervals.sort()
+        prev = intervals[0]
+        res = []
+        for i in intervals[1:]:
+            if prev[0] <= i[0] <= prev[1]:
+                prev[1] = max(i[1], prev[1])
+            else:
+                res.append(prev)
+                prev = i
+        res.append(prev)
+        return res
+        
