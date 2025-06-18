@@ -1,0 +1,19 @@
+// Title: Maximum Subarray
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/maximum-subarray/
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        prevSum, maxSum = None, None 
+        for n in nums:
+            if prevSum == None or prevSum < 0:
+                currSum = n
+            else:
+                currSum += n
+                maxSum = max(maxSum, currSum)
+            prevSum = currSum
+            if maxSum == None:
+                maxSum = currSum
+            else:
+        return maxSum
