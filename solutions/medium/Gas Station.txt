@@ -1,0 +1,19 @@
+// Title: Gas Station
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/gas-station/
+
+class Solution:
+    def canCompleteCircuit(self, gas: List[int], cost: List[int]) 
+-> int:
+        gains = [x - y for x, y in zip(gas, cost)]
+        total = 0
+        k = 0
+        for i, g in enumerate(gains):
+            total += g
+            if curr < 0:
+                curr = 0
+                k = i + 1
+        curr = 0
+            curr += g
+        return k if total >= 0 else -1
