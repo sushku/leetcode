@@ -1,0 +1,19 @@
+// Title: Jump Game II
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/jump-game-ii/
+
+class Solution:
+    def jump(self, nums: List[int]) -> int:
+        jumpCount = 1
+        jumpRange = [0, nums[0]]
+        while True:
+            if jumpRange[1] >= len(nums) - 1:
+                return jumpCount
+            maxJump = 0
+            for j in range(jumpRange[0], jumpRange[1] + 1):
+                maxJump = max(maxJump, j + nums[j])
+            jumpRange = [jumpRange[1] + 1, maxJump]
+        if len(nums) == 1:
+            return 0
+            jumpCount += 1
