@@ -8,33 +8,33 @@ class Solution:
         """
         Do not return anything, modify board in-place instead.
         """
+        # Time: O(M * N)
+        # Space: O(M * N)
         rows, cols = len(board), len(board[0])
+        neighbors = [(1,0), (0,1), (-1,0), (0,-1)]
+        track = set()
+        dq = deque()
         for r in range(rows):
             for c in range(cols):
                 if r > 0 and r < rows - 1 and c > 0 and c < cols - 1:
                     continue
                 if board[r][c] == "X":
                     continue
-        neighbors = [(1,0), (0,1), (-1,0), (0,-1)]
+                board[r][c] = "E"
+                track.add((r, c))
+                dq.append((r, c))
+                while dq:
+                    r1, c1 = dq.popleft()
+                    for n in neighbors:
                         r2, c2 = r1 + n[0], c1 + n[1]
                         if 0 <= r2 < rows and 0 <= c2 < cols and board[r2][c2] == "O":
                             board[r2][c2] = "E"
-        dq = deque()
-                board[r][c] = "E"
-                dq.append((r, c))
-                    r1, c1 = dq.pop()
-                    for n in neighbors:
-                            dq.append((r2, c2))
                             track.add((r2, c2))
-                track.add((r, c))
-        track = set()
-                while dq:
-        for cell in track:
-            board[cell[0]][cell[1]] = "O"
-        # Time: O(M * N)
-        # Space: O(1)
+                            dq.append((r2, c2))
         for r in range(rows):
             for c in range(cols):
                 if board[r][c] == "O":
                     board[r][c] = "X"
+        for cell in track:
+            board[cell[0]][cell[1]] = "O"
         return
