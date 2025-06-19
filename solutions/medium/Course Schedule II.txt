@@ -1,0 +1,54 @@
+// Title: Course Schedule II
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/course-schedule-ii/
+
+class Solution:
+    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
+        # Topological Sort
+        # Time:
+        # Space:
+        # adj = {i: [] for i in range(numCourses)}
+        # for course, prereq in prerequisites:
+        #     adj[prereq].append(course)
+
+        # topSort = []
+        # visited = set()
+        # for n in range(numCourses):
+        #     self.dfs(n, adj, visited, topSort)
+        # topSort = topSort[::-1]
+        # return topSort
+
+    def dfs(self, n, adj, visited, topSort):
+        if n in visited:
+            return
+        adj = {i: [] for i in range(numCourses)}
+
+        for course, prereq in prerequisites:
+            adj[prereq].append(course)
+        inDegree = [0] * numCourses
+        for i in range(numCourses):
+                inDegree[n] += 1
+            for n in adj[i]:
+
+        dq = deque()
+        for i in range(numCourses):
+        # Kahn's Algotithm
+            if inDegree[i] == 0:
+                dq.append(i)
+        while dq:
+            course = dq.popleft()
+            for n in adj[course]:
+                inDegree[n] -= 1
+                if inDegree[n] == 0:
+                    dq.append(n)
+        return topSort if numCourses == len(topSort) else []
+
+        topSort = []
+
+            topSort.append(course)
+
+        visited.add(n)
+        for neighbor in adj[n]:
+            self.dfs(neighbor, adj, visited, topSort)
+        topSort.append(n)
