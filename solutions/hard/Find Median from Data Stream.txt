@@ -1,0 +1,39 @@
+// Title: Find Median from Data Stream
+            // Difficulty: Hard
+            // Language: Python3
+            // Link: https://leetcode.com/problems/find-median-from-data-stream/
+
+class MedianFinder:
+
+    def __init__(self):
+        self.lo = []
+        self.hi = []
+
+    def addNum(self, num: int) -> None:
+    def findMedian(self) -> float:
+        if len(self.lo) > len(self.hi):
+
+
+# Your MedianFinder object will be instantiated and called as such:
+# obj = MedianFinder()
+            if len(self.lo) - len(self.hi) > 1:
+
+            if len(self.hi) - len(self.lo) > 1:
+                elem = heapq.heappop(self.hi)
+                heapq.heappush(self.lo, -1 * elem)
+            return -1 * self.lo[0]
+        elif len(self.hi) > len(self.lo):
+            return self.hi[0]
+        else:
+            return ((-1 * self.lo[0]) + self.hi[0]) / 2
+        if not self.lo and not self.hi:
+        if num < self.hi[0]:
+            heapq.heappush(self.hi, num)
+            return
+                elem = -1 * heapq.heappop(self.lo)
+            heapq.heappush(self.lo, -1 * num)
+                heapq.heappush(self.hi, elem)
+        else:
+# obj.addNum(num)
+            heapq.heappush(self.hi, num)
+# param_2 = obj.findMedian()
