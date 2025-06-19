@@ -1,0 +1,27 @@
+// Title: Hand of Straights
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/hand-of-straights/
+
+class Solution:
+    def isNStraightHand(self, hand: List[int], groupSize: int) -> 
+bool:
+        if len(hand) % groupSize:
+            return False
+        cardCount = {}
+        for c in hand:
+            cardCount[c] = 1 + cardCount.get(c, 0)
+        heap = []
+        for c in cardCount:
+            heapq.heappush(heap, c)
+        while heap:
+            c = heap[0]
+        groupCount = 0
+            for i in range(c, c + groupSize):
+                if cardCount.get(i, 0) >= 1:
+                    cardCount[i] -= 1
+        return True
+                else:
+                    return False
+                    if cardCount.get(i) == 1:
+                        heapq.heappop(heap)
