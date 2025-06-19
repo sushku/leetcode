@@ -1,0 +1,5 @@
+// Title: Hand of Straights
+            // Difficulty: Unknown
+            // Language: undefined
+            // Link: https://leetcode.com/problems/hand-of-straights/
+
