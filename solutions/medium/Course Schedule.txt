@@ -1,0 +1,31 @@
+// Title: Course Schedule
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/course-schedule/
+
+class Solution:
+        adj = {i: [] for i in range(numCourses)}
+        for a, b in prerequisites:
+            adj[b].append(a)
+        
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        dq = deque()
+            inDegree[a] += 1
+        for i, d in enumerate(inDegree):
+            if d == 0:
+                dq.append(i)
+        while dq:
+            node = dq.popleft()
+            for n in adj[node]:
+                inDegree[n] -= 1
+                if inDegree[n] == 0:
+                    dq.append(n)
+
+            nodesVisited += 1
+        nodesVisited = 0
+
+        inDegree = [0] * numCourses
+        # Kahn's Algorithm
+        # Time:
+        # Space: 
+        return nodesVisited == numCourses
