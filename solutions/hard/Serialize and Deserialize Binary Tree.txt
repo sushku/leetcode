@@ -1,0 +1,70 @@
+// Title: Serialize and Deserialize Binary Tree
+            // Difficulty: Hard
+            // Language: Python3
+            // Link: https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Codec:
+
+    def serialize(self, root):
+        """Encodes a tree to a single string.
+        
+        :type root: TreeNode
+        :rtype: str
+        """
+
+    def deserialize(self, data):
+        """Decodes your encoded data to tree.
+        
+        :type data: str
+        :rtype: TreeNode
+        """
+        while i < len(dataArr):
+
+# Your Codec object will be instantiated and called as such:
+        dq = deque([root])
+        return "|".join(treeArr)
+        while dq:
+        if not root:
+            return ""
+            node = dq.popleft()
+            if node.left:
+                dq.append(node.left)
+            else:
+                treeArr.append("#")
+            if node.right:
+                dq.append(node.right)
+            else:
+                treeArr.append("#")
+        if not data:
+            return None
+        root = TreeNode(int(dataArr[0]))
+        dq = deque([root])
+            node = dq.popleft()
+            if dataArr[i] != "#":
+        i = 1
+                node.left = TreeNode(int(dataArr[i]))
+                dq.append(node.left)
+            i += 1
+            if dataArr[i] != "#":
+                node.right = TreeNode(int(dataArr[i]))
+                dq.append(node.right)
+# ser = Codec()
+# deser = Codec()
+            i += 1
+        return root
+                treeArr.append(str(node.left.val))
+                treeArr.append(str(node.right.val))
+        treeArr = [str(root.val)]
+
+
+            if i >= len(dataArr):
+                break
+        dataArr = data.split("|")
+# ans = deser.deserialize(ser.serialize(root))
