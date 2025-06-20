@@ -1,0 +1,71 @@
+// Title: Word Search II
+            // Difficulty: Hard
+            // Language: Python3
+            // Link: https://leetcode.com/problems/word-search-ii/
+
+
+        for c in word:
+
+class Solution:
+    def findWords(self, board: List[List[str]], words: List[str]) -> List[str]:
+                r1, c1 = r + n[0], c + n[1]
+                if 0 <= r1 < rows and 0 <= c1 < cols and (r1, c1) not in visited:
+        for word in words:
+            trie.addWord(word)
+
+    def addWord(self, word):
+        self.end = False
+                node.neighbors[c] = TrieNode()
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
+
+        node = self.root
+        node.end = True
+            node = node.neighbors[c]
+    def searchPrefix(self, prefix):
+        node = self.root
+        for c in prefix:
+            if c not in node.neighbors:
+                return False
+            node = node.neighbors[c]
+        return True
+
+        trie = Trie()
+        def backtrack(r, c, char, prefix, node):
+        res = set()
+        for r in range(rows):
+        visited = set()
+                    backtrack(r1, c1, board[r1][c1], prefix, charNode)
+        rows = len(board)
+                    prefix.append(board[r1][c1])
+                    prefix.pop()
+        cols = len(board[0])
+
+            if c not in node.neighbors:
+                    visited.remove((r1, c1))
+                    visited.add((r1, c1))
+    def searchWord(self, word):
+        node = self.root
+        for c in word:
+            if c not in node.neighbors:
+                return False
+            node = node.neighbors[c]
+        return node.end
+
+            for c in range(cols):
+                visited.add((r, c))
+        neighbors = [(1,0), (0,1), (-1,0), (0,-1)]
+            for n in neighbors:
+                res.add(''.join(prefix))
+                backtrack(r, c, board[r][c], [board[r][c]], trie.root)
+                if not board[r][c] in trie.root.neighbors:
+                    continue
+                    del node.neighbors[char]
+                if not charNode.neighbors:
+            if char not in node.neighbors:
+            charNode = node.neighbors[char]
+                return
+                visited.remove((r, c))
+            if charNode.end:
+        return list(res)
