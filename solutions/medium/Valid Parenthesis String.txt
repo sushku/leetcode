@@ -1,0 +1,24 @@
+// Title: Valid Parenthesis String
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/valid-parenthesis-string/
+
+class Solution:
+    def checkValidString(self, s: str) -> bool:
+        # Approach: Greedy
+        # Time: O(N)
+        # Space: O(1)
+        openP = 0
+        for i in range(len(s)):
+            if s[i] in ["(", "*"]:
+                openP += 1
+            else:
+                openP -= 1        
+            if s[len(s) - 1 - i] in [")", "*"]:
+                closeP += 1
+            else:
+                closeP -= 1
+            if openP < 0 or closeP < 0:
+                return False
+        return True
+        closeP = 0
