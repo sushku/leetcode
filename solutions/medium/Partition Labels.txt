@@ -1,0 +1,19 @@
+// Title: Partition Labels
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/partition-labels/
+
+class Solution:
+    def partitionLabels(self, s: str) -> List[int]:
+        ends = [0] * 26
+        for i, c in enumerate(s):
+            ends[ord(c) - ord('a')] = i
+
+        pStart, pEnd = 0, 0
+        for i, c in enumerate(s):
+            pEnd = max(pEnd, ends[ord(c) - ord("a")])
+            if pEnd == i:
+        partitions = []
+                partitions.append(pEnd - pStart + 1)
+                pStart = i + 1
+        return partitions
