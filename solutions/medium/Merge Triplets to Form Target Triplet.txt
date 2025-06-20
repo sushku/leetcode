@@ -1,0 +1,17 @@
+// Title: Merge Triplets to Form Target Triplet
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/merge-triplets-to-form-target-triplet/
+
+class Solution:
+    def mergeTriplets(self, triplets: List[List[int]], target: List
+[int]) -> bool:
+        ans = None
+        for t in triplets:
+            if t[0] <= target[0] and t[1] <= target[1] and t[2] <= 
+target[2]:
+                if not ans:
+                    ans = t
+                else:
+                    ans = list(map(max, zip(ans, t)))
+        return ans == target
