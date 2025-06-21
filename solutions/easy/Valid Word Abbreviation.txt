@@ -1,0 +1,37 @@
+// Title: Valid Word Abbreviation
+            // Difficulty: Easy
+            // Language: Python3
+            // Link: https://leetcode.com/problems/valid-word-abbreviation/
+
+class Solution:
+    def validWordAbbreviation(self, word: str, abbr: str) -> bool:
+        if abbr[0] == "0":
+            return False
+        if abbr.isdigit():
+            return len(word) == int(abbr)
+        prevC = ""
+        i, j = 0, 0
+        while i < len(word) and j < len(abbr):
+            if abbr[j].isdigit():
+                if not prevC.isdigit() and int(abbr[j]) == 0:
+                    return False
+                if prevC.isdigit():
+                    i += int(prevC + abbr[j])
+                    prevC = ""
+                else:
+                    prevC = abbr[j]
+                j += 1
+            else:
+                if prevC.isdigit():
+                    i += int(prevC)
+                if word[i] == abbr[j]:
+                    prevC = abbr[j]
+                    i += 1
+                    j += 1
+                else:
+                    return False
+        if prevC.isdigit():
+            i += int(prevC)
+                    if i >= len(word):
+                        return False
+        return i == len(word) and j == len(abbr)
