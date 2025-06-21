@@ -1,0 +1,39 @@
+// Title: Basic Calculator II
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/basic-calculator-ii/
+
+class Solution:
+    def calculate(self, s: str) -> int:
+        currNum, prevNum, op = "", "", ""
+            if c.isdigit():
+                currNum += c
+            elif c in "*/+-":
+                    if op == "*":
+                else:
+        for c in s:
+                        prevNum = str(int(prevNum) * int(currNum))
+                    elif op == "/":
+                        prevNum = str(int(int(prevNum) / int(currNum)))
+                    prevNum = currNum
+                op = c
+                if op != "" and prevNum != "":
+        lastNum = 0
+                lastNum += int(prevNum) * int(currNum)
+                    else:
+                        lastNum += int(prevNum)
+                        prevNum = str(int(currNum) * mult)
+                        mult = -1 if op == "-" else 1
+                lastNum += int(int(prevNum) / int(currNum))
+                lastNum += int(prevNum) + int(currNum)
+            if op == "*":
+            elif op == "/":
+            elif op == "+":
+            else:
+                lastNum += int(prevNum) - int(currNum)
+        s = "".join(s.split())
+        if prevNum == "":
+            lastNum += int(currNum)
+        else:
+                currNum = ""
+        return lastNum
