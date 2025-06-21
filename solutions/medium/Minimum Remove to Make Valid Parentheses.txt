@@ -1,0 +1,30 @@
+// Title: Minimum Remove to Make Valid Parentheses
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/
+
+class Solution:
+    def minRemoveToMakeValid(self, s: str) -> str:
+        openP, closeP = 0, 0
+        for c in s:
+            if c == "(":
+                openP += 1
+            elif c == ")":
+                openP -= 1
+        for c in s[::-1]:
+                res.append(c)
+        res = []
+            if c == ")":
+                closeP +=1
+            elif c == "(":
+                closeP -= 1
+            if closeP >= 0:
+        s = ''.join(res)
+        res = []
+            if openP >= 0:
+                res.append(c)
+                openP = 0
+            else:
+            else:
+                closeP = 0
+        return ''.join(res[::-1])
