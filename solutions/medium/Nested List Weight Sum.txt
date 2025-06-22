@@ -1,0 +1,37 @@
+// Title: Nested List Weight Sum
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/nested-list-weight-sum/
+
+#        The result is undefined if this NestedInteger 
+holds a nested list
+#        :rtype int
+#        """
+#
+#    def getList(self):
+#        """
+#        @return the nested list that this NestedInteger 
+holds, if it holds a nested list
+#        The result is undefined if this NestedInteger 
+holds a single integer
+#        :rtype List[NestedInteger]
+#        """
+
+class Solution:
+    def depthSum(self, nestedList: List[NestedInteger]) -> 
+int:
+        def depthSumRecursion(nestList, depth):
+            nSum = 0
+            for n in nList:
+                if n.isInteger():
+                    nSum += depth * n.getInteger()
+                else:
+                    nSum += depthSumRecursion(n, depth + 1)
+            return nSum
+holds, if it holds a single integer
+            if isinstance(nestList, list):
+                nList = nestList
+            else:
+                nList = nestList.getList()
+
+        return depthSumRecursion(nestedList, 1)
