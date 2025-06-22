@@ -1,0 +1,15 @@
+// Title: Buildings With an Ocean View
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/buildings-with-an-ocean-view/
+
+class Solution:
+    def findBuildings(self, heights: List[int]) -> List[int]:
+        res = []
+        maxHeight = 0
+        for i, h in enumerate(heights[::-1]):
+            if h > maxHeight:
+                maxHeight = h
+                res.append([h, len(heights) - i - 1])
+        res.sort(reverse=True)
+        return [x[1] for x in res]
