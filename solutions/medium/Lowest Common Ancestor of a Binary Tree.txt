@@ -1,0 +1,40 @@
+// Title: Lowest Common Ancestor of a Binary Tree
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+
+                ret = dfs(node.left, r)
+            if node.right:
+                if ret:
+                    return ret
+                else:
+                    path.pop()
+                ret = dfs(node.right, r)
+                if ret:
+                    return ret
+                else:
+                    path.pop()
+            return False
+        dfs(root, p)
+        pathP = path.copy()
+        path = [root]
+        path = [root]
+        dfs(root, q)
+        pathQ = path.copy()
+        for i in range(min(len(pathP), len(pathQ))):
+        ans = None
+                path.append(node.right)
+                path.append(node.left)
+            if node.left:
+                return True
+            if node == r:
+                return False
+            if not node:
+            nonlocal path
+        def dfs(node, r):
+'TreeNode', q: 'TreeNode') -> 'TreeNode':
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 
+class Solution:
+
+#         self.right = None
+#         self.left = None
