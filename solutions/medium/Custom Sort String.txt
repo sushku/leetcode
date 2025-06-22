@@ -1,0 +1,18 @@
+// Title: Custom Sort String
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/custom-sort-string/
+
+class Solution:
+    def customSortString(self, order: str, s: str) -> str:
+        sMap = {}
+        for c in s:
+            sMap[c] = 1 + sMap.get(c, 0)
+        w = ""
+        for l in order:
+            if l in sMap.keys():
+                w += l * sMap[l]
+                del sMap[l]
+        for k in sMap.keys():
+            w += k * sMap[k]
+        return w
