@@ -1,0 +1,35 @@
+// Title: Sum Root to Leaf Numbers
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/sum-root-to-leaf-numbers/
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def sumNumbers(self, root: Optional[TreeNode]) -> int:
+        def dfs(node, pathNum):
+            if not node.left and not node.right:
+                pathNum.append(str(node.val))
+                pathNums.append(pathNum.copy())
+                return
+            pathNum.append(str(node.val))
+            if node.left:
+                dfs(node.left, pathNum)
+            if node.right:
+        pathNums = []
+                pathNum.pop()
+                dfs(node.right, pathNum)
+                pathNum.pop()
+        dfs(root, [])
+            nonlocal pathNums
+        for l in pathNums:
+            for val in l:
+            lNum = ""
+                lNum += val
+            tot += int(lNum)
+        tot = 0
+        return tot
