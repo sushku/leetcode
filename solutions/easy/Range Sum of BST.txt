@@ -1,0 +1,29 @@
+// Title: Range Sum of BST
+            // Difficulty: Easy
+            // Language: Python3
+            // Link: https://leetcode.com/problems/range-sum-of-bst/
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
+        path = []
+        def inOrder(node):
+            if not node:
+                return
+            inOrder(node.left)
+            nonlocal path, found, end
+            inOrder(node.right)
+        inOrder(root)
+        found, end = False, False
+            if node.val == low:
+                found = True
+            if node.val == high:
+                end = True
+            if found and not end:
+                path.append(node.val)
+        return sum(path)
