@@ -1,0 +1,38 @@
+// Title: Simplify Path
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/simplify-path/
+
+class Solution:
+    def simplifyPath(self, path: str) -> str:
+        stk, token = [], ""
+        for c in path:
+                        stk.append(token)
+            else:
+                token += c
+        if stk:
+                elif token == ".":
+                elif token == "..":
+            prevC = c
+        prevC = ""
+            if c == "/":
+                if prevC == "/":
+                    continue
+            res = "/" + "/".join(stk)
+        else:
+            res = "/"
+                token = ""
+                        stk.pop()
+        if token == ".":
+        elif len(token) > 0:
+            stk.append(token)
+                stk.pop()
+                    token = ""
+            pass
+        elif token == "..":
+
+                else:
+                    if stk:
+            if stk:
+                    if len(token) > 0:
+        return res
