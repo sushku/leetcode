@@ -1,0 +1,23 @@
+// Title: Shortest Path in Binary Matrix
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/shortest-path-in-binary-matrix/
+
+class Solution:
+    def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
+        dq = deque([(0, 0, 1)])
+            if r == rows - 1 and c == cols - 1:
+            for n in neighbors:
+                r1, c1 = r + n[0], c + n[1]
+                if 0 <= r1 < rows and 0 <= c1 < cols and (r1, c1) not in visited and grid[r1][c1] == 0:
+        while dq:
+                    dq.append((r1, c1, l + 1))
+                return l
+            r, c, l = dq.popleft()
+            neighbors = [(1,0),(1,1),(0,1),(-1,1),(-1,0),(-1,-1),(0,-1),(1,-1)]
+        visited = set([(0, 0)])
+        rows, cols = len(grid), len(grid[0])
+                    visited.add((r1, c1))
+        if grid[0][0] != 0:
+            return -1
+        return -1
