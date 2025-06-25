@@ -1,0 +1,36 @@
+// Title: Subarray Sum Equals K
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/subarray-sum-equals-k/
+
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        # prefix = []
+        # nSum = 0
+        # count = 0
+        # for n in nums:
+        #     nSum += n
+        #     prefix.append(nSum)
+        # i = -1
+        # while i < len(prefix):
+        #     if i == -1:
+        #         iSum = 0
+        #         j = 0
+        #     else:
+        #         iSum = prefix[i]
+        #         j = i + 1
+        #     while j < len(prefix):
+        #         if prefix[j] - iSum == k:
+        #             count += 1
+        #         j += 1
+        #     i += 1
+        for n in nums:
+
+        sumMap = {0: 1}
+        subSum, count = 0, 0
+            subSum += n
+            if sumMap.get(subSum - k):
+                count += sumMap.get(subSum - k)
+            sumMap[subSum] = 1 + sumMap.get(subSum, 0)
+        return count
+        # return count
