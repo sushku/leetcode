@@ -1,0 +1,20 @@
+// Title: Minimum Add to Make Parentheses Valid
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
+
+class Solution:
+    def minAddToMakeValid(self, s: str) -> int:
+        open = 0
+        for p in s:
+            if p == "(":
+                open += 1
+            if p == ")":
+                open -= 1
+            if open < 0:
+                minAdd += 1
+        minAdd = 0
+                open = 0
+        if open > 0:
+            minAdd += open
+        return minAdd
