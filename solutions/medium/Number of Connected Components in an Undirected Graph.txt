@@ -1,0 +1,37 @@
+// Title: Number of Connected Components in an Undirected Graph
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
+
+class Solution:
+    def countComponents(self, n: int, edges: List[List[int]]) -> 
+int:
+        adj = {i: [] for i in range(n)}
+        for edge in edges:
+            adj[edge[0]].append(edge[1])
+
+#         elif self.rank[pi] > self.rank[pj]:
+#             self.parent[pj] = pi
+#         else:
+#             self.parent[pj] = pi
+#             self.rank[pi] += 1
+#         return True
+
+        def dfs(node):
+            if not adj[node]:
+                return
+            for nbr in adj[node]:
+                    dfs(nbr)
+        counter = 0
+        for v in range(n):
+            if v not in visited:
+                dfs(v)
+                counter += 1
+            visited.add(node)
+
+        visited = set()
+        return counter
+#             self.parent[pi] = pj
+                if nbr not in visited:
+            nonlocal visited
+            adj[edge[1]].append(edge[0])
