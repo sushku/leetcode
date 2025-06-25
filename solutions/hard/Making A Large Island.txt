@@ -1,0 +1,40 @@
+// Title: Making A Large Island
+            // Difficulty: Hard
+            // Language: Python3
+            // Link: https://leetcode.com/problems/making-a-large-island/
+
+class Solution:
+    def largestIsland(self, grid: List[List[int]]) -> int:
+        rows, cols = len(grid), len(grid[0])
+        neighbors = [(1, 0), (0, 1), (-1, 0), (0, -1)]
+        islandMap = {}
+        islandId = 100
+        for r in range(rows):
+            for c in range(cols):
+                if grid[r][c] != 1:
+                    continue
+                dq = deque([(r, c)])
+                grid[r][c] = islandId
+                islandSize = 0
+                while dq:
+                    r1, c1 = dq.popleft()
+                    islandSize += 1
+                    for n in neighbors:
+                        r2, c2 = r1 + n[0], c1 + n[1]
+                        if 0 <= r2 < rows and 0 <= c2 < 
+cols and grid[r2][c2] == 1:
+                            dq.append((r2, c2))
+                islandMap[islandId] = islandSize
+                islandId += 1
+
+        for r in range(rows):
+            for c in range(cols):
+                if grid[r][c] != 0:
+                    continue
+                adjIslands = set()
+                for n in neighbors:
+                    r2, c2 = r + n[0], c + n[1]
+                    if 0 <= r2 < rows and 0 <= c2 < cols 
+                            grid[r2][c2] = islandId
+        maxSize = 0
+                maxSize = max(maxSize, islandSize)
